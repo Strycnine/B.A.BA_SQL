@@ -1,9 +1,9 @@
 /*
-  ========================
-     DataBase SQL B.A.BA
-  ========================
-          Partie 1
-            BTP
+     ========================
+        DataBase SQL B.A.BA
+     ========================
+             Partie 1
+               BTP
 
 ⠸⣷⣦⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⠀⠀⠀
 ⠀⠙⣿⡄⠈⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠔⠊⠉⣿⡿⠁⠀⠀⠀
@@ -179,20 +179,20 @@ SELECT label FROM produit WHERE idF IN (SELECT id FROM fournisseur WHERE ville L
 -- Question 14 :
 SELECT nom, ville FROM client JOIN commande ON client.id = commande.idC WHERE (labelP = 'Briques') AND (quantite > 10) AND (quantite < 15);
 
--- Question 15 : (manque imbriqué)
+-- Question 15 :
 SELECT fournisseur.nom, label, prix
 FROM fournisseur
 JOIN produit ON fournisseur.id=produit.idF
 JOIN commande ON produit.label=commande.labelF
 JOIN client ON client.id=commande.idC
 WHERE client.nom='Jean';
-
+--
 SELECT nom, label, prix FROM fournisseur
 JOIN produit ON fournisseur.id = produit.idF
 WHERE label IN (
   SELECT labelP FROM commande WHERE idC IN (
     SELECT id FROM client WHERE nom = 'Jean'));
-
+--
 SELECT fournisseur.nom, produit.label, produit.prix FROM fournisseur
 WHERE id IN (
   SELECT idF FROM produit WHERE label IN (

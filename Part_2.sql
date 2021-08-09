@@ -1,9 +1,9 @@
 /*
-  ========================
-     DataBase SQL B.A.BA
-  ========================
-          Partie 2
-           Music
+      ========================
+         DataBase SQL B.A.BA
+      ========================
+              Partie 2
+               Music
 
 ⠸⣷⣦⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⠀⠀⠀
 ⠀⠙⣿⡄⠈⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠔⠊⠉⣿⡿⠁⠀⠀⠀
@@ -199,7 +199,7 @@ SELECT COUNT(date) FROM Concert
 WHERE date LIKE '2015%'
 AND nomOrchestre IN (SELECT nom FROM Orchestre WHERE style='blues');
 
--- Question mmts04 : (manque NY)
+-- Question mmts04 :
 SELECT lieu, AVG(prix) FROM Concert
 WHERE nomOrchestre IN (SELECT nom FROM Orchestre WHERE style='jazz')
 GROUP BY lieu;
